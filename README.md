@@ -4,7 +4,16 @@ This is an unofficial implementation of the paper: [PonderNet: Learning to Ponde
 
 PonderNet adapts the computation based on the input. It changes the number of steps to take on a recurrent network based on the input. PonderNet learns this with end-to-end gradient descent.
 
+## Citations
 
+@misc{banino2021pondernet,
+    title   = {PonderNet: Learning to Ponder}, 
+    author  = {Andrea Banino and Jan Balaguer and Charles Blundell},
+    year    = {2021},
+    eprint  = {2107.05407},
+    archivePrefix = {arXiv},
+    primaryClass = {cs.LG}
+}
 
 ## License
 
