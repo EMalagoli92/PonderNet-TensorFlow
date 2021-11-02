@@ -9,12 +9,12 @@ PonderNet adapts the computation based on the input. It changes the number of st
 ## Citations
 ```bibtex
 @misc{banino2021pondernet,
-    title   = {PonderNet: Learning to Ponder}, 
-    author  = {Andrea Banino and Jan Balaguer and Charles Blundell},
-    year    = {2021},
-    eprint  = {2107.05407},
-    archivePrefix = {arXiv},
-    primaryClass = {cs.LG}
+      title={PonderNet: Learning to Ponder}, 
+      author={Andrea Banino and Jan Balaguer and Charles Blundell},
+      year={2021},
+      eprint={2107.05407},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG}
 }
 ```
 
