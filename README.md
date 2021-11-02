@@ -1,6 +1,6 @@
 # PonderNet-TensorFlow
 
-This is an unofficial implementation of the paper: [PonderNet: Learning to Ponder](https://arxiv.org/abs/2107.05407) in TensorFlow.
+This is an Unofficial Implementation of the paper: [PonderNet: Learning to Ponder](https://arxiv.org/abs/2107.05407) in TensorFlow.
 
 Official PyTorch Implementation: [Link](https://nn.labml.ai/adaptive_computation/ponder_net/index.html)
 
