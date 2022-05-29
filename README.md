@@ -11,7 +11,7 @@ Official PyTorch Implementation: [Link](https://nn.labml.ai/adaptive_computation
 Installing necessary packages: `pip install -r requirements.txt`
 
 ## Experiment 
-Train a PonderNet on Parity Task: 
+Train a PonderNet on Parity Task: `python experiment.py`
 
 ## Citations
 ```bibtex
