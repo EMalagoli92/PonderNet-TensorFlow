@@ -11,7 +11,8 @@ Installing necessary packages: `pip install -r requirements.txt`
 ## Experiment  on parity Task
 Train a PonderNet on Parity Task: `python experiment.py`
 
-https://production-media.paperswithcode.com/methods/99d96967-3912-44fe-9930-b0ea32ed42a3.png
+[![name](link to image on GH)](https://production-media.paperswithcode.com/methods/99d96967-3912-44fe-9930-b0ea32ed42a3.png)
+
 
 ## Citations
 ```bibtex
