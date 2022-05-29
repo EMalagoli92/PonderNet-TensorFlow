@@ -1,4 +1,4 @@
-![badge_license](https://img.shields.io/github/license/EMalagoli92/PonderNet-TensorFlow) ![badge_python](https://img.shields.io/badge/python-3.9-cyan) ![badge_tensorflow](https://img.shields.io/badge/TensorFlow-2.x-orange)
+![badge_license](https://img.shields.io/github/license/EMalagoli92/PonderNet-TensorFlow) ![badge_python](https://img.shields.io/badge/python-3.9-blue) ![badge_tensorflow](https://img.shields.io/badge/TensorFlow-2.x-orange)
 
 # PonderNet - TensorFlow
 
@@ -9,6 +9,8 @@ In standard neural networks the amount of computation used grows with the size o
 
 ## Installation
 Installing necessary packages: `pip install -r requirements.txt`
+
+Tested on Ubuntu 20.04 LTS, python 3.9.7.
 
 ## Experiment  on Parity Task
 Train a PonderNet on Parity Task: `python experiment.py`
