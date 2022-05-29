@@ -11,7 +11,7 @@ Installing necessary packages: `pip install -r requirements.txt`
 ## Experiment  on Parity Task
 Train a PonderNet on Parity Task: `python experiment.py`
 
-![My Remote Image](https://production-media.paperswithcode.com/methods/99d96967-3912-44fe-9930-b0ea32ed42a3.png)
+![Parity Task](https://production-media.paperswithcode.com/methods/99d96967-3912-44fe-9930-b0ea32ed42a3.png)
 
 
 
