@@ -1,3 +1,5 @@
+![badge](https://img.shields.io/github/license/EMalagoli92/PonderNet-TensorFlow)
+
 # PonderNet - TensorFlow
 
 This is an Unofficial Implementation of the paper: [PonderNet: Learning to Ponder](https://arxiv.org/abs/2107.05407) in TensorFlow 2.x.
