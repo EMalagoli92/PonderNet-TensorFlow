@@ -1,4 +1,4 @@
-![badge](https://img.shields.io/github/license/EMalagoli92/PonderNet-TensorFlow) ![badge2](https://img.shields.io/badge/python-3.9-cyan)
+![badge_license](https://img.shields.io/github/license/EMalagoli92/PonderNet-TensorFlow) ![badge_python](https://img.shields.io/badge/python-3.9-cyan) ![badge_tensorflow](https://img.shields.io/badge/TensorFlow-2.x-orange)
 
 # PonderNet - TensorFlow
 
