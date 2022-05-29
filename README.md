@@ -6,6 +6,9 @@ Official PyTorch Implementation: [Link](https://nn.labml.ai/adaptive_computation
 
 PonderNet adapts the computation based on the input. It changes the number of steps to take on a recurrent network based on the input. PonderNet learns this with end-to-end gradient descent.
 
+## Installation
+Installing necessary packages: `pip install -r requirements.txt
+
 ## Citations
 ```bibtex
 @misc{banino2021pondernet,
