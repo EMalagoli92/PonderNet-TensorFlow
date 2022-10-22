@@ -6,10 +6,10 @@ from tensorflow.python.framework import random_seed
 import time
 from collections import defaultdict
 from typing import Tuple
-from src import ParityDataset as PD
-from src import ParityPonderGRU as PPG
-from src import ReconstructionLoss as RCL
-from src import RegularizationLoss as RGL
+from src.dataset.parity_dataset import ParityDataset
+from src.parity_pondergru import ParityPonderGru
+from src.loss.reconstruction_loss import ReconstructionLoss
+from src.loss.regularization_loss import RegularizationLoss
 
 # Set Seed
 SEED = 123
@@ -36,17 +36,17 @@ class Configs(object):
         self.beta = kwargs.get('beta', 0.01)
         self.grad_norm_clip = kwargs.get('grad_norm_clip', 1.0)
         self.learning_rate = kwargs.get('learning_rate', 0.0003)
-        self.train_loader = PD.ParityDataset(self.batch_size * self.n_batches, 
-                                             self.n_elems, 
-                                             self.batch_size)
-        self.valid_loader = PD.ParityDataset(self.batch_size * 32, 
-                                             self.n_elems, 
-                                             self.batch_size)
-        self.model = PPG.ParityPonderGru(self.n_elems, 
-                                         self.n_hidden, 
-                                         self.max_steps)
-        self.loss_rec = RCL.ReconstructionLoss(tf.nn.sigmoid_cross_entropy_with_logits)
-        self.loss_reg = RGL.RegularizationLoss(self.lambda_p, self.max_steps)
+        self.train_loader = ParityDataset(self.batch_size * self.n_batches, 
+                                          self.n_elems, 
+                                          self.batch_size)
+        self.valid_loader = ParityDataset(self.batch_size * 32, 
+                                          self.n_elems, 
+                                          self.batch_size)
+        self.model = ParityPonderGru(self.n_elems, 
+                                     self.n_hidden, 
+                                     self.max_steps)
+        self.loss_rec = ReconstructionLoss(tf.nn.sigmoid_cross_entropy_with_logits)
+        self.loss_reg = RegularizationLoss(self.lambda_p, self.max_steps)
         self.optimizer = tf.keras.optimizers.Adam(learning_rate = self.learning_rate,epsilon=1e-08)
         self.train_acc_metric = tf.keras.metrics.Accuracy()
         self.val_acc_metric = tf.keras.metrics.Accuracy()
