@@ -3,6 +3,12 @@ import tensorflow as tf
 
 class ReconstructionLoss(object):
     def __init__(self, loss_func: tf.keras.losses):
+        '''
+        Parameters
+        ----------
+        loss_func : tf.keras.losses
+            Loss function.
+        '''
         super().__init__()
         self.loss_func = loss_func
 

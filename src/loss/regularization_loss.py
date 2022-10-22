@@ -7,7 +7,19 @@ class KLDiv(object):
         return tf.math.reduce_sum(y_pred * (tf.math.log(y_pred) - y_true)) / batch
 
 class RegularizationLoss(object):
-    def __init__(self,lambda_p: float, max_steps: int = 1_000):
+    def __init__(self,
+                 lambda_p: float, 
+                 max_steps: int = 1000
+                 ):
+        '''
+        Parameters
+        ----------
+        lambda_p : float
+            The success probability of geometric distribution. 
+        max_steps : int, optional
+            Highest N. 
+            The default is 1000.
+        '''
         super().__init__()
         not_halted = 1.0
         p_g_list = []
