@@ -4,10 +4,6 @@ import tensorflow_probability as tfp
 import math
 
 
-class ClassSigmoid(object):
-    def __call__(self, x: tf.Tensor) -> tf.Tensor:
-        return tf.keras.activations.sigmoid(x)
-
 class ParityPonderGru(tf.keras.models.Model):
     def __init__(self, n_elems: int, n_hidden: int, max_steps: int):
         super().__init__()
@@ -34,7 +30,7 @@ class ParityPonderGru(tf.keras.models.Model):
                                                   kernel_initializer=initializer,
                                                   bias_initializer=initializer)
 
-        self.lambda_prob = ClassSigmoid()
+        self.lambda_prob = tf.keras.layers.Activation(tf.nn.sigmoid)
         self.is_halt = False
 
     def call(self, x: tf.Tensor) -> Tuple[tf.Tensor, tf.Tensor, tf.Tensor, tf.Tensor]:
