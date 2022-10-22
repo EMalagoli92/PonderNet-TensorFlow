@@ -1,12 +1,17 @@
 from typing import Tuple
+import math
 import tensorflow as tf
 import tensorflow_probability as tfp
-import math
 
 
 class ParityPonderGru(tf.keras.models.Model):
-    def __init__(self, n_elems: int, n_hidden: int, max_steps: int):
-        super().__init__()
+    def __init__(self, 
+                 n_elems: int, 
+                 n_hidden: int, 
+                 max_steps: int,
+                 **kwargs
+                 ):
+        super().__init__(**kwargs)
         self.max_steps = max_steps
         self.n_hidden = n_hidden
 
@@ -19,24 +24,24 @@ class ParityPonderGru(tf.keras.models.Model):
                                            kernel_initializer=initializer,
                                            recurrent_initializer=initializer,
                                            bias_initializer=initializer)
-
         self.output_layer = tf.keras.layers.Dense(input_shape=(n_hidden,),
                                                   units=1,
                                                   kernel_initializer=initializer,
                                                   bias_initializer=initializer)
-
         self.lambda_layer = tf.keras.layers.Dense(input_shape=(n_hidden,),
                                                   units=1,
                                                   kernel_initializer=initializer,
                                                   bias_initializer=initializer)
-
         self.lambda_prob = tf.keras.layers.Activation(tf.nn.sigmoid)
         self.is_halt = False
 
-    def call(self, x: tf.Tensor) -> Tuple[tf.Tensor, tf.Tensor, tf.Tensor, tf.Tensor]:
-        batch_size = x.get_shape()[0]
-        h = tf.zeros((x.get_shape()[0], self.n_hidden), dtype=x.dtype)
-        _, h = self.gru(x, h)
+    def call(self, 
+             inputs: tf.Tensor,
+             **kwargs
+             ) -> Tuple[tf.Tensor, tf.Tensor, tf.Tensor, tf.Tensor]:
+        batch_size = inputs.get_shape()[0]
+        h = tf.zeros((inputs.get_shape()[0], self.n_hidden), dtype=inputs.dtype)
+        _, h = self.gru(inputs, h)
 
         p = []
         y = []
@@ -67,7 +72,7 @@ class ParityPonderGru(tf.keras.models.Model):
 
             halted = halted + halt
 
-            _, h = self.gru(x, h)
+            _, h = self.gru(inputs, h)
 
             if self.is_halt and tf.reduce_sum(halted).numpy() == batch_size:
                 break
