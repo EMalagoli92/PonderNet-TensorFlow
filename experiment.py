@@ -1,4 +1,8 @@
+import os
+import random
+import numpy as np
 import tensorflow as tf
+from tensorflow.python.framework import random_seed
 import time
 from collections import defaultdict
 from typing import Tuple
@@ -7,7 +11,15 @@ from src import ParityPonderGRU as PPG
 from src import ReconstructionLoss as RCL
 from src import RegularizationLoss as RGL
 
-tf.random.set_seed(1)
+# Set Seed
+SEED = 123
+os.environ['PYTHONHASHSEED'] = str(SEED)
+random.seed(SEED)
+tf.random.set_seed(SEED)
+random_seed.set_seed(SEED)
+np.random.seed(SEED)
+
+
 tf.keras.backend.clear_session()
 tf.keras.backend.set_floatx('float64')
 

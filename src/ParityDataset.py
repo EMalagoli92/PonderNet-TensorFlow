@@ -1,7 +1,7 @@
 import tensorflow as tf
 import numpy as np
 from typing import Tuple
-np.random.seed(1)
+
 
 
 class ParityDataset(tf.keras.utils.Sequence):
