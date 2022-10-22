@@ -3,9 +3,24 @@ import numpy as np
 from typing import Tuple
 
 
-
 class ParityDataset(tf.keras.utils.Sequence):
-    def __init__(self, n_samples: int, n_elems: int = 64, batch_size: int = 128):
+    def __init__(self, 
+                 n_samples: int, 
+                 n_elems: int = 64, 
+                 batch_size: int = 128
+                 ):
+        '''
+        Parameters
+        ----------
+        n_samples : int
+            Number of samples.
+        n_elems : int, optional
+            Number of elements in the input vector. 
+            The default is 64.
+        batch_size : int, optional
+            Batch size. 
+            The default is 128.
+        '''
         self.n_samples = n_samples
         self.n_elems = n_elems
         self.batch_size = batch_size
