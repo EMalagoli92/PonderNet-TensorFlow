@@ -11,6 +11,16 @@ class ParityPonderGru(tf.keras.models.Model):
                  max_steps: int,
                  **kwargs
                  ):
+        '''
+        Parameters
+        ----------
+        n_elems : int
+            Number of elements in the input vector.
+        n_hidden : int
+            The state vector size of the GRU.
+        max_steps : int
+            Maximum number of steps.
+        '''
         super().__init__(**kwargs)
         self.max_steps = max_steps
         self.n_hidden = n_hidden
@@ -23,16 +33,24 @@ class ParityPonderGru(tf.keras.models.Model):
                                            units=n_hidden,
                                            kernel_initializer=initializer,
                                            recurrent_initializer=initializer,
-                                           bias_initializer=initializer)
+                                           bias_initializer=initializer,
+                                           name = "gru"
+                                           )
         self.output_layer = tf.keras.layers.Dense(input_shape=(n_hidden,),
                                                   units=1,
                                                   kernel_initializer=initializer,
-                                                  bias_initializer=initializer)
+                                                  bias_initializer=initializer,
+                                                  name = "output_layer"
+                                                  )
         self.lambda_layer = tf.keras.layers.Dense(input_shape=(n_hidden,),
                                                   units=1,
                                                   kernel_initializer=initializer,
-                                                  bias_initializer=initializer)
-        self.lambda_prob = tf.keras.layers.Activation(tf.nn.sigmoid)
+                                                  bias_initializer=initializer,
+                                                  name = "lamba_layer"
+                                                  )
+        self.lambda_prob = tf.keras.layers.Activation(tf.nn.sigmoid,
+                                                      name = "lambda_prob"
+                                                      )
         self.is_halt = False
 
     def call(self, 
