@@ -10,21 +10,46 @@
 
 TensorFlow 2.X reimplementation of [PonderNet: Learning to Ponder](https://arxiv.org/abs/2107.05407), Haiping Wu, Bin Xiao, Noel Codella, Mengchen Liu, Xiyang Dai, Lu Yuan, Lei Zhang.
 
-**Abstract**
-*In standard neural networks the amount of computation used grows with the size of the inputs, but not with the complexity of the problem being learnt. To overcome this limitation we introduce PonderNet, a new algorithm that learns to adapt the amount of computation based on the complexity of the problem at hand. PonderNet learns end-to-end the number of computational steps to achieve an effective compromise between training prediction accuracy, computational cost and generalization. On a complex synthetic problem, PonderNet dramatically improves performance over previous adaptive computation methods and additionally succeeds at extrapolation tests where traditional neural networks fail. Also, our method matched the current state of the art results on a real world question and answering dataset, but using less compute. Finally, PonderNet reached state of the art results on a complex task designed to test the reasoning capabilities of neural networks.*
+## Table of content
+- [Abstract](#abstract)
+- [Experiment on Parity Task](#paritytask)    
+- [Installation](#installation)
+- [Acknowledgement](#acknowledgement)    
+- [Citations](#citations)
+- [License](#license)    
+    
+<div id="abstract"/>
 
-## Installation
-Installing necessary packages: `pip install -r requirements.txt`
+## Abstract
+In standard neural networks the amount of computation used grows with the size of the inputs, but not with the complexity of the problem being learnt. To overcome this limitation we introduce PonderNet, a new algorithm that learns to adapt the amount of computation based on the complexity of the problem at hand. PonderNet learns end-to-end the number of computational steps to achieve an effective compromise between training prediction accuracy, computational cost and generalization. On a complex synthetic problem, PonderNet dramatically improves performance over previous adaptive computation methods and additionally succeeds at extrapolation tests where traditional neural networks fail. Also, our method matched the current state of the art results on a real world question and answering dataset, but using less compute. Finally, PonderNet reached state of the art results on a complex task designed to test the reasoning capabilities of neural networks.
 
-Tested on Ubuntu 20.04 LTS, python 3.9.7.
-
+<div id="paritytask"/>
+    
 ## Experiment  on Parity Task
 Train a PonderNet on Parity Task: `python experiment.py`
 
-![Parity Task](https://production-media.paperswithcode.com/methods/99d96967-3912-44fe-9930-b0ea32ed42a3.png)
+![Parity Task](https://production-media.paperswithcode.com/methods/99d96967-3912-44fe-9930-b0ea32ed42a3.png)    
+    
+    
+<div id="installation"/>
+    
+## Installation
+Clone the repo and install necessary packages 
+```
+git clone https://github.com/EMalagoli92/PonderNet-TensorFlow.git
+pip install -r requirements.txt
+```
 
+Tested on *Ubuntu 20.04.4 LTS x86_64*, *python 3.9.7*.
 
+<div id="acknowledgement"/>
 
+## Acknowledgement
+- [PonderNet](https://nn.labml.ai/adaptive_computation/ponder_net/index.html) (Official PyTorch Implementation)
+    
+
+<div id="citations"/>
+    
 ## Citations
 ```bibtex
 @misc{banino2021pondernet,
@@ -37,8 +62,8 @@ Train a PonderNet on Parity Task: `python experiment.py`
 }
 ```
 
-Official PyTorch Implementation: [Link](https://nn.labml.ai/adaptive_computation/ponder_net/index.html)
+
+<div id="license"/>
 
 ## License
-
-[MIT](https://github.com/EMalagoli92/PonderNet-TensorFlow/blob/main/LICENSE)
+This work is made available under the [MIT License](https://github.com/EMalagoli92/PonderNet-TensorFlow/blob/main/LICENSE)
