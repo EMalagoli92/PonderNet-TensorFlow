@@ -1,15 +1,16 @@
 import tensorflow as tf
 
 
-class KLDiv(object):
+class KLDiv(tf.keras.losses.Loss):
     def __call__(self,y_true: tf.Tensor,y_pred: tf.Tensor) -> tf.Tensor:
         batch = y_true.get_shape()[0]
         return tf.math.reduce_sum(y_pred * (tf.math.log(y_pred) - y_true)) / batch
 
-class RegularizationLoss(object):
+class RegularizationLoss(tf.keras.losses.Loss):
     def __init__(self,
                  lambda_p: float, 
-                 max_steps: int = 1000
+                 max_steps: int = 1000,
+                 **kwargs
                  ):
         '''
         Parameters
@@ -20,7 +21,7 @@ class RegularizationLoss(object):
             Highest N. 
             The default is 1000.
         '''
-        super().__init__()
+        super().__init__(**kwargs)
         not_halted = 1.0
         p_g_list = []
         for k in range(max_steps):
