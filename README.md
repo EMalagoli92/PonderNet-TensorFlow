@@ -5,6 +5,7 @@
   <a href="https://www.python.org">![Python](https://img.shields.io/badge/python-%3E%3D%203.9-blue?style=for-the-badge)</a>  
   
 </div>
+
 # PonderNet - TensorFlow
 
 This is an Unofficial Implementation in TensorFlow 2.x of the paper: [PonderNet: Learning to Ponder](https://arxiv.org/abs/2107.05407).
