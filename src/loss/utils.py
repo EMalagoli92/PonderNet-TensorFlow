@@ -10,5 +10,6 @@ class KLDiv(tf.keras.losses.Loss):
                  y_true: tf.Tensor,
                  y_pred: tf.Tensor
                  ) -> tf.Tensor:
-        batch_size = tf.shape(y_true,out_type = tf.keras.backend.floatx())[0]
+        batch_size = tf.shape(y_true)[0]
+        batch_size = tf.cast(batch_size, dtype = tf.keras.backend.floatx())
         return tf.math.reduce_sum(y_pred * (tf.math.log(y_pred) - y_true)) / batch_size
