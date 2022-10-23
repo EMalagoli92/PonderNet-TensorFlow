@@ -24,7 +24,7 @@ class RegularizationLoss(tf.keras.losses.Loss):
             p_g_list.append(not_halted * lambda_p)
             not_halted = not_halted * (1-lambda_p)
         p_g = tf.stack(p_g_list)
-        self.p_g = tf.cast(tf.Variable(p_g,trainable=False,name='p_g'),dtype=tf.float64)
+        self.p_g = tf.cast(tf.Variable(p_g,trainable=False,name='p_g'),dtype=tf.keras.backend.floatx())
         self.kl_div = KLDiv()
 
     def __call__(self,p: tf.Tensor) -> tf.Tensor:

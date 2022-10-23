@@ -37,8 +37,8 @@ class ParityDataset(tf.keras.utils.Sequence):
             X[i, :n_non_zero] = np.random.randint(0, 2, (n_non_zero,))*2 - 1
             X[i] = np.random.permutation(X[i])
             Y[i] = (X[i] == 1.).sum() % 2
-        X = tf.convert_to_tensor(X, dtype=tf.float64)
-        Y = tf.convert_to_tensor(Y, dtype=tf.float64)
+        X = tf.convert_to_tensor(X, dtype=tf.keras.backend.floatx())
+        Y = tf.convert_to_tensor(Y, dtype=tf.keras.backend.floatx())
         return X, Y
 
     def __getitem__(self, index: int) -> Tuple[tf.Tensor, tf.Tensor]:
