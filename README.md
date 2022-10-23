@@ -28,7 +28,7 @@ In standard neural networks the amount of computation used grows with the size o
 ## Experiment  on Parity Task
 Train a PonderNet on Parity Task: `python experiment.py`
 
-![Parity Task](https://production-media.paperswithcode.com/methods/99d96967-3912-44fe-9930-b0ea32ed42a3.png)    
+![Parity Task](https://raw.githubusercontent.com/EMalagoli92/PonderNet-TensorFlow/main/assets/images/parity_task.png)    
     
     
 <div id="installation"/>
