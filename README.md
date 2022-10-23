@@ -1,5 +1,10 @@
-![badge_license](https://img.shields.io/github/license/EMalagoli92/PonderNet-TensorFlow) ![badge_python](https://img.shields.io/badge/python-3.9-blue) ![badge_tensorflow](https://img.shields.io/badge/TensorFlow-2.x-orange)
+<div align="center">
 
+  <a href="https://www.tensorflow.org">![TensorFLow](https://img.shields.io/badge/TensorFlow-2.X-orange?style=for-the-badge) 
+  <a href="https://github.com/EMalagoli92/PonderNet-TensorFlow/blob/main/LICENSE">![License](https://img.shields.io/github/license/EMalagoli92/PonderNet-TensorFlow?style=for-the-badge) 
+  <a href="https://www.python.org">![Python](https://img.shields.io/badge/python-%3E%3D%203.9-blue?style=for-the-badge)</a>  
+  
+</div>
 # PonderNet - TensorFlow
 
 This is an Unofficial Implementation in TensorFlow 2.x of the paper: [PonderNet: Learning to Ponder](https://arxiv.org/abs/2107.05407).
