@@ -8,7 +8,7 @@
 
 # PonderNet - TensorFlow
 
-TensorFlow 2.X reimplementation of [PonderNet: Learning to Ponder](https://arxiv.org/abs/2107.05407), Haiping Wu, Bin Xiao, Noel Codella, Mengchen Liu, Xiyang Dai, Lu Yuan, Lei Zhang.
+TensorFlow 2.X reimplementation of [PonderNet: Learning to Ponder](https://arxiv.org/abs/2107.05407), Andrea Banino, Jan Balaguer, Charles Blundell.
 
 ## Table of content
 - [Abstract](#abstract)
