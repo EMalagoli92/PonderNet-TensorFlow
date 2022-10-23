@@ -56,7 +56,7 @@ python experiment.py
 <div id="acknowledgement"/>
 
 ## Acknowledgement
-- [PonderNet](https://nn.labml.ai/adaptive_computation/ponder_net/index.html) (Official PyTorch Implementation)
+[PonderNet](https://nn.labml.ai/adaptive_computation/ponder_net/index.html) (Official PyTorch Implementation)
     
 
 <div id="citations"/>
