@@ -10,7 +10,7 @@
 
 TensorFlow 2.X reimplementation of [PonderNet: Learning to Ponder](https://arxiv.org/abs/2107.05407), Andrea Banino, Jan Balaguer, Charles Blundell.
 
-## Table of content
+## Table of contents
 - [Abstract](#abstract)
 - [Experiment on Parity Task](#paritytask)    
 - [Installation](#installation)
