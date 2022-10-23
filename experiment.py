@@ -25,17 +25,64 @@ tf.keras.backend.set_floatx('float64')
 
 
 class Configs(object):
-    def __init__(self,**kwargs):
-        self.epochs = kwargs.get('epochs', 100)
-        self.n_batches = kwargs.get('n_batches', 500)
-        self.batch_size = kwargs.get('batch_size', 128)
-        self.n_elems = kwargs.get('n_elems', 8)
-        self.n_hidden = kwargs.get('n_hidden', 64)
-        self.max_steps = kwargs.get('max_steps', 20)
-        self.lambda_p = kwargs.get('lambda_p', 0.2)
-        self.beta = kwargs.get('beta', 0.01)
-        self.grad_norm_clip = kwargs.get('grad_norm_clip', 1.0)
-        self.learning_rate = kwargs.get('learning_rate', 0.0003)
+    def __init__(self,
+                 epochs: int = 100,
+                 n_batches: int = 500,
+                 batch_size: int = 128,
+                 n_elems: int = 8,
+                 n_hidden: int = 64,
+                 max_steps: int = 20,
+                 lambda_p: float = .2,
+                 beta: float = .01,
+                 grad_norm_clip: float = 1.0,
+                 learning_rate: float = 3e-4
+                 ):
+        '''
+        Train a PonderNet on Parity Task.
+
+        Parameters
+        ----------
+        epochs : int, optional
+            Number of epochs. 
+            The default is 100.
+        n_batches : int, optional
+            Number of batches per epoch. 
+            The default is 500.
+        batch_size : int, optional
+            Batch size. 
+            The default is 128.
+        n_elems : int, optional
+            The number of elements in the input vector.
+            The default is 8.
+        n_hidden : int, optional
+            Number of units in the hidden layer (state).
+            The default is 64.
+        max_steps : int, optional
+            Maximum number of steps N.
+            The default is 20.
+        lambda_p : float, optional
+            Lambda for geometric distribution.
+            The default is .2.
+        beta : float, optional
+            Regularization loss coefficient.
+            The default is .01.
+        grad_norm_clip : float, optional
+            Gradient clipping by norm.
+            The default is 1.0.
+        learning_rate : float, optional
+            Learning rate for Adam optimizer. 
+            The default is 3e-4.
+        '''
+        self.epochs = epochs
+        self.n_batches = n_batches
+        self.batch_size = batch_size
+        self.n_elems = n_elems
+        self.n_hidden = n_hidden
+        self.max_steps = max_steps
+        self.lambda_p = lambda_p
+        self.beta = beta
+        self.grad_norm_clip = grad_norm_clip
+        self.learning_rate = learning_rate
         self.train_loader = ParityDataset(self.batch_size * self.n_batches, 
                                           self.n_elems, 
                                           self.batch_size)
