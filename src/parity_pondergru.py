@@ -57,8 +57,8 @@ class ParityPonderGru(tf.keras.models.Model):
              inputs: tf.Tensor,
              **kwargs
              ) -> Tuple[tf.Tensor, tf.Tensor, tf.Tensor, tf.Tensor]:
-        batch_size = inputs.get_shape()[0]
-        h = tf.zeros((inputs.get_shape()[0], self.n_hidden), dtype=inputs.dtype)
+        batch_size = tf.shape(inputs)[0]
+        h = tf.zeros((batch_size, self.n_hidden), dtype=inputs.dtype)
         _, h = self.gru(inputs, h)
 
         p = []
@@ -71,7 +71,7 @@ class ParityPonderGru(tf.keras.models.Model):
 
         for n in range(1, self.max_steps + 1):
             if n == self.max_steps:
-                lambda_n = tf.ones(h.get_shape()[0], dtype=h.dtype)
+                lambda_n = tf.ones(tf.shape(h)[0], dtype=h.dtype)
             else:
                 lambda_n = self.lambda_prob(self.lambda_layer(h))[:, 0]
 

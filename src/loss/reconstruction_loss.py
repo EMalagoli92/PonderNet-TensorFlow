@@ -21,7 +21,7 @@ class ReconstructionLoss(tf.keras.losses.Loss):
                  y: tf.Tensor
                  ) -> tf.Tensor:
         total_loss = tf.zeros((1), dtype=p.dtype)
-        for n in range(p.get_shape()[0]):
+        for n in range(tf.shape(p)[0]):
             loss = tf.math.reduce_mean(
                 (p[n] * self.loss_func(y, y_hat[n])), keepdims=True)
             total_loss += loss

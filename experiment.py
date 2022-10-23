@@ -74,7 +74,7 @@ class Configs(object):
         grads = tf.clip_by_global_norm(grads, use_norm = total_norm + 1e-6,clip_norm=self.grad_norm_clip)[0]
         self.optimizer.apply_gradients(zip(grads, self.model.trainable_weights))
         self.train_acc_metric.update_state(y_hat_sampled >0, batch_Y)
-        steps = tf.range(1,p.get_shape()[0] +1,dtype=p.dtype)
+        steps = tf.range(1,tf.shape(p)[0] +1,dtype=p.dtype)
         expected_steps = tf.reduce_sum(p * steps[:,None],axis=0)
         expected_steps = tf.reduce_mean(expected_steps)
         return loss_rec, loss_reg, expected_steps
@@ -85,7 +85,7 @@ class Configs(object):
         loss_rec = self.loss_rec(p,y_hat, batch_Y)
         loss_reg = self.loss_reg(p)
         self.val_acc_metric.update_state(y_hat_sampled>0, batch_Y)
-        steps = tf.range(1,p.get_shape()[0] +1,dtype=p.dtype)
+        steps = tf.range(1,tf.shape(p)[0] +1,dtype=p.dtype)
         expected_steps = tf.reduce_sum(p * steps[:,None],axis=0)
         expected_steps = tf.reduce_mean(expected_steps)
         return loss_rec, loss_reg, expected_steps

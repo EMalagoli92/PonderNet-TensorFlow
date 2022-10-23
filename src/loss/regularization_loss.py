@@ -29,5 +29,5 @@ class RegularizationLoss(tf.keras.losses.Loss):
 
     def __call__(self,p: tf.Tensor) -> tf.Tensor:
         p = tf.transpose(p,perm=[1,0])
-        p_g = tf.broadcast_to(self.p_g[None,:p.get_shape()[1]],shape = p.get_shape())
+        p_g = tf.broadcast_to(self.p_g[None,:tf.shape(p)[1]],shape = tf.shape(p))
         return self.kl_div(tf.math.log(p), p_g)
