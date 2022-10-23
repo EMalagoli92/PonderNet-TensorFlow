@@ -1,7 +1,7 @@
 <div align="center">
 
   <a href="https://www.tensorflow.org">![TensorFLow](https://img.shields.io/badge/TensorFlow-2.X-orange?style=for-the-badge) 
-  <a href="https://github.com/EMalagoli92/CvT-TensorFlow/blob/main/LICENSE">![License](https://img.shields.io/github/license/EMalagoli92/CvT-TensorFlow?style=for-the-badge) 
+  <a href="https://github.com/EMalagoli92/PonderNet-TensorFlow/blob/main/LICENSE">![License](https://img.shields.io/github/license/EMalagoli92/PonderNet-TensorFlow?style=for-the-badge) 
   <a href="https://www.python.org">![Python](https://img.shields.io/badge/python-%3E%3D%203.9-blue?style=for-the-badge)</a>  
   
 </div>
