@@ -53,17 +53,29 @@ class Configs(object):
         self.history = defaultdict(list)
         
     def ProgBar(self):
-        self.stateful_metrics =['train_loss', 'train_loss_reg','train_steps','val_loss','val_loss_reg','train_acc','val_acc','val_steps']
+        self.stateful_metrics =['train_loss', 
+                                'train_loss_reg',
+                                'train_steps',
+                                'val_loss',
+                                'val_loss_reg',
+                                'train_acc',
+                                'val_acc',
+                                'val_steps'
+                                ]
         self.ProgBar_ = tf.keras.utils.Progbar(self.n_batches, 
                                                stateful_metrics = self.stateful_metrics,
                                                unit_name = 'batch',
-                                               width = 30)
+                                               width = 30
+                                               )
 
     def history_update(self,values):
         for tuple in values: self.history[tuple[0]].append(tuple[1].numpy())
 
     @tf.function
-    def train_step(self,batch_X: tf.Tensor, batch_Y: tf.Tensor) -> Tuple[tf.Tensor,tf.Tensor,tf.Tensor]:
+    def train_step(self,
+                   batch_X: tf.Tensor, 
+                   batch_Y: tf.Tensor
+                   ) -> Tuple[tf.Tensor,tf.Tensor,tf.Tensor]:
         with tf.GradientTape() as tape:
             p, y_hat, p_sampled, y_hat_sampled = self.model(batch_X,training=True)
             loss_rec = self.loss_rec(p,y_hat, batch_Y)
@@ -80,7 +92,10 @@ class Configs(object):
         return loss_rec, loss_reg, expected_steps
     
     @tf.function
-    def valid_step(self,batch_X: tf.Tensor, batch_Y: tf.Tensor) -> Tuple[tf.Tensor,tf.Tensor,tf.Tensor]:
+    def valid_step(self,
+                   batch_X: tf.Tensor, 
+                   batch_Y: tf.Tensor
+                   ) -> Tuple[tf.Tensor,tf.Tensor,tf.Tensor]:
         p, y_hat, p_sampled, y_hat_sampled = self.model(batch_X,training=False)
         loss_rec = self.loss_rec(p,y_hat, batch_Y)
         loss_reg = self.loss_reg(p)

@@ -1,6 +1,7 @@
 import tensorflow as tf
 
 
+@tf.keras.utils.register_keras_serializable(package='pondernet')
 class ReconstructionLoss(tf.keras.losses.Loss):
     def __init__(self, 
                  loss_func: tf.keras.losses,
@@ -26,3 +27,8 @@ class ReconstructionLoss(tf.keras.losses.Loss):
                 (p[n] * self.loss_func(y, y_hat[n])), keepdims=True)
             total_loss += loss
         return tf.squeeze(total_loss)
+    
+    def get_config(self) -> dict:
+        config = super().get_config()
+        config.update({"loss_func": self.loss_func})
+        return config

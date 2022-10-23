@@ -1,6 +1,6 @@
 import tensorflow as tf
 
-
+@tf.keras.utils.register_keras_serializable(package='pondernet')
 class KLDiv(tf.keras.losses.Loss):
     '''
     The Kullback-Leibler divergence loss with 'batchmean' reduction.
