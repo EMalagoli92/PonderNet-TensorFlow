@@ -14,6 +14,7 @@ TensorFlow 2.X reimplementation of [PonderNet: Learning to Ponder](https://arxiv
 - [Abstract](#abstract)
 - [Experiment on Parity Task](#paritytask)    
 - [Installation](#installation)
+- [Usage](#usage)    
 - [Acknowledgement](#acknowledgement)    
 - [Citations](#citations)
 - [License](#license)    
@@ -26,7 +27,7 @@ In standard neural networks the amount of computation used grows with the size o
 <div id="paritytask"/>
     
 ## Experiment  on Parity Task
-Train a PonderNet on Parity Task: `python experiment.py`
+
 
 ![Parity Task](https://raw.githubusercontent.com/EMalagoli92/PonderNet-TensorFlow/main/assets/images/parity_task.png)    
     
@@ -39,8 +40,18 @@ Clone the repo and install necessary packages
 git clone https://github.com/EMalagoli92/PonderNet-TensorFlow.git
 pip install -r requirements.txt
 ```
+Tested on *Ubuntu 20.04.4 LTS x86_64*, *python 3.9.7*.    
+    
+<div id="usage"/>
+    
+## Usage
+Train a PonderNet on Parity Task
+```
+python experiment.py    
+```
+  
 
-Tested on *Ubuntu 20.04.4 LTS x86_64*, *python 3.9.7*.
+
 
 <div id="acknowledgement"/>
 
