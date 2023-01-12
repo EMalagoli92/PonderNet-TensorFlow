@@ -47,7 +47,7 @@ Tested on *Ubuntu 20.04.4 LTS x86_64*, *python 3.9.7*.
 ## Usage
 Train a PonderNet on Parity Task
 ```
-python experiment.py    
+python __main__.py    
 ```
   
 
