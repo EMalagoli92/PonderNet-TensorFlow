@@ -30,16 +30,8 @@ class ParityDataset(tf.keras.utils.Sequence):
         X = []
         Y = []
         for _ in range(self.batch_size):
-            n_non_zero = tf.random.uniform(
-                shape=(), minval=1, maxval=self.n_elems + 1, dtype=tf.int32
-            )
-            x = (
-                tf.random.uniform(
-                    shape=(n_non_zero,), minval=0, maxval=2, dtype=tf.int32
-                )
-                * 2
-                - 1
-            )
+            n_non_zero = tf.random.uniform((), 1, self.n_elems + 1, tf.int32)
+            x = tf.random.uniform((n_non_zero,), 0, 2, tf.int32) * 2 - 1
             x = tf.concat(
                 [x, tf.zeros((self.n_elems - n_non_zero), dtype=tf.int32)], axis=0
             )
